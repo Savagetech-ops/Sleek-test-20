@@ -1,0 +1,17 @@
+const products = [
+  { name: "Elegant Dress Black", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Elegant%20Dress%20Black", img: "https://images.unsplash.com/photo-1566174053879-3151530a7d1a", price: "₦25000.00", category: "Women’s Luxury", description: "A stunning evening dress in soft silk." },
+  { name: "Casual Sneakers White", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Casual%20Sneakers%20White", img: "https://images.unsplash.com/photo-1600185365483-263d7a4cc7519", price: "₦10000.00", category: "Casual", description: "Comfortable sneakers for daily wear." },
+  { name: "Leather Jacket Black", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Leather%20Jacket%20Black", img: "https://images.unsplash.com/photo-1521223890158-f9f7c3a5d504", price: "₦35000.00", category: "Men’s", description: "Classic black leather jacket." },
+  { name: "Gold Necklace Classic", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Gold%20Necklace%20Classic", img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1", price: "₦45000.00", category: "Luxury", description: "Elegant 18k gold necklace." },
+  { name: "Summer Skirt Floral", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Summer%20Skirt%20Floral", img: "https://images.unsplash.com/photo-1590102426319-94a1b79966b07", price: "₦8000.00", category: "Women’s", description: "Light and breezy floral skirt." },
+  { name: "Denim Jeans Blue", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Denim%20Jeans%20Blue", img: "https://images.unsplash.com/photo-1542272604-787c3835535d", price: "₦12000.00", category: "Casual", description: "Slim-fit blue denim jeans." },
+  { name: "Designer Sunglasses Black", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Designer%20Black", img: "https://images.unsplash.com/photo-1577803645773-f96470509666", price: "₦20000.00", category: "Luxury", description: "Trendy polarized sunglasses." },
+  { name: "Formal Shirt White", link: "https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Formal%20Shirt%20White", img: "https://images.unsplash.com/photo-1603252109303-1751441dd551", price: "₦15000.00", description: "Crisp white dress shirt." },
+  { name: "Tote Bag Leather", link: "/https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Tote%20Leather", img: "https://images.unsplash.com/photo-1584917869284-3c4f71a6c7c4", src="₦15000",00: "Spacious black leather jacket." },
+  { name: "Sports Cap Black", link: "/https://wa.me/2348100123242?text=Hi%2C%20I'm%20interested%20in%20Black", imgBlack: "https://images.unsplash.com/photo-1573649471415-1df0b9b4d9c3", price: "₦5000.00", category: "Casual", description: "Breathable cotton sports cap." }
+].flatMap((product, i) => Array(16).fill().map((_, j) => ({
+  ...product,
+  name: `${product.name} ${['Black', 'White', 'Blue', 'Red', 'Green', 'Grey', 'Pink', 'Navy', 'Beige', 'Brown', 'Silver', 'Gold', 'Purple', 'Orange', 'Yellow', 'Teal'][j]}`,
+  price: `₦${(parseFloat(product.price.replace('₦', '')) + j * 1000).toFixed(2)}`,
+  link: product.link.replace(product.name, `${product.name} ${['Black', 'White', 'Blue', 'Red', 'Green', 'Grey', 'Pink', 'Navy', 'Beige', 'Brown', 'Silver', 'Gold', 'Purple', 'Orange', 'Yellow', 'Teal'][j]}`)
+    })));
